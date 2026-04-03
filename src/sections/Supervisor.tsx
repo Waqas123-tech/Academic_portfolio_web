@@ -65,7 +65,7 @@ const Supervisor = () => {
             {/* Image */}
             <div className="lg:col-span-2 relative h-[400px] lg:h-full min-h-[400px]">
               <img
-                src="/supervisor_ashraf.jpg"
+                src="/Academic_portfolio_web/supervisor_ashraf.jpg"
                 alt="Dr. Ashraf Zia"
                 className="w-full h-full object-contain bg-gradient-to-b from-space-lighter/20 to-space rounded-lg"
               />
@@ -170,7 +170,7 @@ const Supervisor = () => {
             {/* Image */}
             <div className="lg:col-span-2 relative h-[400px] lg:h-full min-h-[400px] order-1 lg:order-2">
               <img
-                src="/supervisor_fangli.jpg"
+                src="/Academic_portfolio_web/supervisor_fangli.jpg"
                 alt="Dr. Fangli Ying"
                 className="w-full h-full object-contain bg-gradient-to-b from-space-lighter/20 to-space rounded-lg"
               />
