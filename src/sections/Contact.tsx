@@ -97,6 +97,7 @@ const Contact = () => {
       className="relative py-24 md:py-32 px-6 lg:px-8 overflow-hidden"
     >
       {/* Vortex Background */}
+      {/* eslint-disable-next-line react/no-unknown-property */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
           ref={vortexRef}

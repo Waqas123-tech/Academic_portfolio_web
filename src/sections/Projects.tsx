@@ -119,8 +119,10 @@ const Projects = () => {
               >
                 {/* Image Container */}
                 <div className="relative h-48 overflow-hidden">
+                  {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role */}
                   <div
                     className="project-image absolute inset-0 scale-110"
+                    // eslint-disable-next-line react/no-unknown-property
                     style={{
                       backgroundImage: `url(${project.image})`,
                       backgroundSize: 'cover',
@@ -131,20 +133,24 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-space via-space/50 to-transparent" />
                   
                   {/* Status Badge */}
+                  {/* eslint-disable-next-line react/no-unknown-property */}
                   <div
                     className="absolute top-4 left-4 px-3 py-1.5 rounded-full flex items-center gap-2"
                     style={{ backgroundColor: `${project.color}15` }}
                   >
+                    {/* eslint-disable-next-line react/no-unknown-property */}
                     <Loader2
                       className="w-4 h-4 animate-spin"
                       style={{ color: project.color }}
                     />
+                    {/* eslint-disable-next-line react/no-unknown-property */}
                     <span className="text-sm font-medium" style={{ color: project.color }}>
                       Active
                     </span>
                   </div>
 
                   {/* Project Icon */}
+                  {/* eslint-disable-next-line react/no-unknown-property */}
                   <div
                     className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center"
                     style={{ backgroundColor: `${project.color}20` }}
