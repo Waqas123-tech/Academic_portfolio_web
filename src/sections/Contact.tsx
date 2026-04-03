@@ -24,6 +24,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -59,13 +60,34 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
+    setError('');
+
+    try {
+      // Replace YOUR_FORMSPREE_ID with your actual Formspree form ID
+      const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (err) {
+      setError('Failed to send message. Please try again or contact me directly.');
+      console.error('Form submission error:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -204,12 +226,20 @@ const Contact = () => {
                 </div>
               ) : (
                 <>
+                  {error && (
+                    <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl">
+                      <p className="text-red-400 text-sm">{error}</p>
+                    </div>
+                  )}
+
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
-                      <label className="block text-starlight text-sm mb-2">
+                      <label htmlFor="name" className="block text-starlight text-sm mb-2">
                         Your Name
                       </label>
                       <Input
+                        id="name"
+                        name="name"
                         type="text"
                         placeholder="John Doe"
                         value={formData.name}
@@ -219,10 +249,12 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-starlight text-sm mb-2">
+                      <label htmlFor="email" className="block text-starlight text-sm mb-2">
                         Email Address
                       </label>
                       <Input
+                        id="email"
+                        name="email"
                         type="email"
                         placeholder="john@example.com"
                         value={formData.email}
@@ -234,10 +266,12 @@ const Contact = () => {
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-starlight text-sm mb-2">
+                    <label htmlFor="message" className="block text-starlight text-sm mb-2">
                       Message
                     </label>
                     <Textarea
+                      id="message"
+                      name="message"
                       placeholder="Tell me about your research interests or collaboration ideas..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
