@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Linkedin, Mail, ExternalLink, Users, Brain, Activity, Bot, Microscope } from 'lucide-react';
@@ -36,6 +36,7 @@ const Team = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -165,7 +166,9 @@ const Team = () => {
             return (
               <div
                 key={index}
-                className="collab-card glass rounded-2xl p-6 group hover:border-cyan/30 transition-all duration-300"
+                className="collab-card glass rounded-2xl p-6 group hover:border-cyan/30 transition-all duration-300 cursor-pointer"
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
@@ -176,7 +179,13 @@ const Team = () => {
                 <h4 className="font-display text-lg text-starlight mb-2 group-hover:text-cyan transition-colors">
                   {collab.title}
                 </h4>
-                <p className="text-distant text-sm leading-relaxed">
+                <p 
+                  className={`text-distant text-sm leading-relaxed transition-all duration-300 ${
+                    hoveredCard === index 
+                      ? 'line-clamp-none' 
+                      : 'line-clamp-2'
+                  }`}
+                >
                   {collab.description}
                 </p>
               </div>
