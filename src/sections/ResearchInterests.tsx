@@ -2,6 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Brain, Network, Eye, Activity } from 'lucide-react';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@/components/ui/accordion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,7 +41,7 @@ const researchAreas = [
 const ResearchInterests = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [activeCard, setActiveCard] = useState<string | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -44,12 +50,11 @@ const ResearchInterests = () => {
       if (cards) {
         gsap.fromTo(
           cards,
-          { y: 80, opacity: 0, rotateX: 15 },
+          { y: 50, opacity: 0 },
           {
             y: 0,
             opacity: 1,
-            rotateX: 0,
-            duration: 0.8,
+            duration: 0.6,
             stagger: 0.15,
             ease: 'power2.out',
             scrollTrigger: {
@@ -92,79 +97,65 @@ const ResearchInterests = () => {
           </p>
         </div>
 
-        {/* Research Cards Grid */}
+        {/* Research Areas Accordion */}
         <div
           ref={cardsRef}
-          className="grid md:grid-cols-2 gap-6 lg:gap-8"
+          className="max-w-4xl mx-auto"
         >
-          {researchAreas.map((area, index) => (
-            <div
-              key={index}
-              className="research-card group relative glass rounded-3xl p-8 cursor-pointer perspective-1000"
-              onMouseEnter={() => setActiveCard(index)}
-              onMouseLeave={() => setActiveCard(null)}
-              style={{
-                transformStyle: 'preserve-3d',
-              }}
-            >
-              {/* Hover Glow Effect */}
-              <div
-                className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{
-                  background: `radial-gradient(circle at 50% 0%, ${area.color}15, transparent 60%)`,
-                }}
-              />
+          <Accordion type="single" collapsible className="w-full space-y-4" onValueChange={setActiveCard}>
+            {researchAreas.map((area, index) => {
+              const itemValue = `item-${index}`;
+              const isActive = activeCard === itemValue;
+              return (
+                <AccordionItem key={index} value={itemValue} className="research-card glass rounded-2xl px-6 border-0 overflow-hidden">
+                  <AccordionTrigger className="hover:no-underline py-6 px-0 group">
+                    <div className="flex items-start gap-4 text-left">
+                      {/* Icon */}
+                      <div
+                        className="w-12 h-12 rounded-xl flex items-center justify-center mt-1 flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+                        style={{ backgroundColor: `${area.color}15` }}
+                      >
+                        <area.icon
+                          className="w-6 h-6"
+                          style={{ color: area.color }}
+                        />
+                      </div>
 
-              {/* Icon */}
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
-                style={{ backgroundColor: `${area.color}15` }}
-              >
-                <area.icon
-                  className="w-7 h-7 transition-colors duration-300"
-                  style={{ color: area.color }}
-                />
-              </div>
+                      {/* Title */}
+                      <div className="flex-1">
+                        <h3 
+                          className="font-display text-xl md:text-2xl text-starlight group-hover:text-cyan transition-colors duration-300"
+                          style={{
+                            color: isActive ? area.color : undefined,
+                          }}
+                        >
+                          {area.title}
+                        </h3>
+                        <p className="text-distant text-sm mt-1">Click to expand...</p>
+                      </div>
+                    </div>
+                  </AccordionTrigger>
 
-              {/* Content */}
-              <h3 className="font-display text-2xl text-starlight mb-4 group-hover:text-cyan transition-colors">
-                {area.title}
-              </h3>
-              <p className="text-distant leading-relaxed">
-                {area.description}
-              </p>
+                  <AccordionContent className="px-0 pb-6">
+                    <div className="pl-16">
+                      <p className="text-distant leading-relaxed text-base">
+                        {area.description}
+                      </p>
+                    </div>
+                  </AccordionContent>
 
-              {/* Animated Border */}
-              <div
-                className="absolute inset-0 rounded-3xl border border-space-lighter/50 group-hover:border-cyan/30 transition-colors duration-300 pointer-events-none"
-              />
-
-              {/* Corner Accent */}
-              <div
-                className="absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{
-                  background: `linear-gradient(135deg, transparent 50%, ${area.color}10 50%)`,
-                  borderRadius: '0 1.5rem 0 0',
-                }}
-              />
-
-              {/* Active Indicator */}
-              {activeCard === index && (
-                <div className="absolute bottom-4 right-4 flex gap-1">
-                  {[...Array(3)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-1.5 h-1.5 rounded-full animate-pulse"
-                      style={{
-                        backgroundColor: area.color,
-                        animationDelay: `${i * 0.15}s`,
-                      }}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+                  {/* Animated Border Accent */}
+                  <div
+                    className="absolute top-0 left-0 h-full w-1 transition-all duration-300 group-hover:bg-opacity-100"
+                    style={{
+                      background: `linear-gradient(to bottom, ${area.color}, transparent)`,
+                      opacity: isActive ? 1 : 0.3,
+                    }}
+                  />
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
         </div>
 
         {/* Bottom CTA */}

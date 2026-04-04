@@ -108,7 +108,7 @@ const About = () => {
             className="relative aspect-[3/4] max-w-md mx-auto lg:mx-0 rounded-3xl overflow-hidden"
           >
             <img
-              src="/Academic_portfolio_web/profile_waqas.png"
+              src="/Academic_portfolio_web/profile_waqas.png?v=1"
               alt="Waqas Ahmad"
               className="w-full h-full object-cover"
             />
