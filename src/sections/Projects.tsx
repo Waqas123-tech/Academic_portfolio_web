@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Loader2, Brain, Activity, Bot } from 'lucide-react';
@@ -38,6 +38,15 @@ const projects = [
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const [expanded, setExpanded] = useState<boolean[]>(() => projects.map(() => false));
+
+  const toggleProject = (projectIndex: number) => {
+    setExpanded((prev) => {
+      const next = [...prev];
+      next[projectIndex] = !next[projectIndex];
+      return next;
+    });
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -111,11 +120,21 @@ const Projects = () => {
         >
           {projects.map((project, index) => {
             const ProjectIcon = project.icon;
+            const isExpanded = expanded[index];
 
             return (
               <div
                 key={index}
-                className="project-card group relative glass rounded-3xl overflow-hidden"
+                role="button"
+                tabIndex={0}
+                onClick={() => toggleProject(index)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleProject(index);
+                  }
+                }}
+                className="project-card group relative glass rounded-3xl overflow-hidden cursor-pointer"
               >
                 {/* Image Container */}
                 <div className="relative h-48 overflow-hidden">
@@ -161,15 +180,15 @@ const Projects = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="font-display text-xl text-starlight mb-3 group-hover:text-cyan transition-colors">
+                  <h3 className="font-display text-xl text-starlight mb-3 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-distant text-sm leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-96 group-hover:opacity-100">
+                  <p className={`text-distant text-sm leading-relaxed mb-4 overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                     {project.description}
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-24 group-hover:opacity-100">
+                  <div className={`flex flex-wrap gap-2 overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'}`}>
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
