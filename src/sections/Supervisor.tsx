@@ -119,7 +119,7 @@ const Supervisor = () => {
                 </h3>
                 <p className="text-cyan flex items-center gap-2">
                   <GraduationCap className="w-5 h-5" />
-                  Lecturer, Department of Computer Science
+                  Associate Professor, Department of Computer Science
                 </p>
                 <p className="text-distant text-sm mt-1">
                   East China University of Science and Technology
