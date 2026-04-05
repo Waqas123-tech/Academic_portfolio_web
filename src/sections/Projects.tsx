@@ -164,12 +164,12 @@ const Projects = () => {
                   <h3 className="font-display text-xl text-starlight mb-3 group-hover:text-cyan transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-distant text-sm leading-relaxed mb-4">
+                  <p className="text-distant text-sm leading-relaxed mb-4 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-96 group-hover:opacity-100">
                     {project.description}
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-24 group-hover:opacity-100">
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
