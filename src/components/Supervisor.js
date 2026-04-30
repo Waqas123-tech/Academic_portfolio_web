@@ -8,7 +8,7 @@ const Supervisor = () => {
       <h2>Supervisor</h2>
 
       <img
-        src={`${process.env.PUBLIC_URL}/profile.png`}
+        src={`${process.env.PUBLIC_URL}/dr-fangli-ying.jpg`}
         alt="Dr. Fangli Ying"
         style={{ width: '150px', borderRadius: '50%', marginTop: '20px' }}
       />
