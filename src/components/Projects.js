@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Projects() {
   const projects = [
@@ -12,10 +11,10 @@ function Projects() {
       <h2>Projects</h2>
 
       {projects.map((project) => (
-        <div key={project.id}>
-          <Link to={`/project/${project.id}`}>
+        <div key={project.id} style={{ marginBottom: '12px' }}>
+          <a href="#" style={{ color: '#2563eb', textDecoration: 'none' }}>
             {project.name}
-          </Link>
+          </a>
         </div>
       ))}
     </div>
