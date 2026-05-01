@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, ArrowRight, Filter } from 'lucide-react';
 
-const blogPosts = [
+export const blogPosts = [
   {
     id: 1,
     title: "Living in the Movie: My Journey with Maladaptive Daydreaming",
@@ -363,10 +363,9 @@ Keep going. Keep growing. Keep choosing reality.`,
 
 const categories = ["All", "Personal Journey", "Neuroscience", "Clinical AI"];
 
-function BlogSection() {
+function BlogSection({ onOpenBlog = () => {} }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isLoading, setIsLoading] = useState(true);
-  const [expandedPostId, setExpandedPostId] = useState(null);
 
   useEffect(() => {
     // Simulate loading
@@ -377,10 +376,6 @@ function BlogSection() {
   const filteredPosts = selectedCategory === "All"
     ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
-
-  const toggleExpand = (postId) => {
-    setExpandedPostId(expandedPostId === postId ? null : postId);
-  };
 
   return (
     <section id="blog" className="bg-slate-50 dark:bg-slate-900 py-20">
@@ -449,15 +444,8 @@ function BlogSection() {
                       {post.title}
                     </h3>
                     <p className="mb-4 text-sm text-slate-600 dark:text-slate-400 line-clamp-3">
-                      {expandedPostId === post.id ? null : post.excerpt}
+                      {post.excerpt}
                     </p>
-                    {expandedPostId === post.id && (
-                      <div className="mb-4 text-sm text-slate-600 dark:text-slate-400">
-                        {post.fullContent.split('\n\n').map((paragraph, idx) => (
-                          <p key={idx} className="mb-3">{paragraph}</p>
-                        ))}
-                      </div>
-                    )}
                     <div className="mb-4 flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-4 w-4" />
@@ -468,12 +456,13 @@ function BlogSection() {
                         {post.readTime}
                       </div>
                     </div>
-                    <button 
-                      onClick={() => toggleExpand(post.id)}
+                    <button
+                      type="button"
+                      onClick={() => onOpenBlog(post.id)}
                       className="inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300"
                     >
-                      {expandedPostId === post.id ? "Read Less" : "Read More"}
-                      <ArrowRight className={`h-4 w-4 transition-transform ${expandedPostId === post.id ? "rotate-90" : "group-hover:translate-x-1"}`} />
+                      Read More
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
                 </article>

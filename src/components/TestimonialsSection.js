@@ -7,21 +7,21 @@ const testimonials = [
     name: "Dr. Fangli Ying",
     role: "Collaborating Researcher",
     organization: "Project Lead",
-    quote: "Cee Cee's work on Few-Shot Meta-Learning for pediatric seizure prediction is groundbreaking. Their ability to bridge complex deep learning with clinical needs is unmatched.",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+    quote: "Waqas Ahmad's work on Few-Shot Meta-Learning for pediatric seizure prediction is groundbreaking. Their ability to bridge complex deep learning with clinical needs is unmatched.",
+    avatar: "/dr-fangli-ying.jpg"
   },
   {
     id: 2,
-    name: "Prof. [Name]",
-    role: "Academic Supervisor",
+    name: "Assistant Prof. Dr Hashim Ali",
+    role: "Academic Co-Supervisor",
     organization: "Abdul Wali Khan University",
-    quote: "A researcher of rare dedication. Cee Cee's CLINIC-DL framework has redefined how we approach validity in AI-driven healthcare.",
+    quote: "A researcher of rare dedication. Waqas Ahmad's CLINIC-DL framework has redefined how we approach validity in AI-driven healthcare.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
   },
   {
     id: 3,
-    name: "Dr. [Name]",
-    role: "Peer Reviewer / Colleague",
+    name: "Dr. Ashraf Zia",
+    role: "Supervisor",
     organization: "Artificial Intelligence Review",
     quote: "The depth of insight in their systematic reviews on Fairness and XAI is exceptional. They don't just build models; they build trust.",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
