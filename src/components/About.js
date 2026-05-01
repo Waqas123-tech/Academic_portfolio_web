@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 function About() {
   const [expanded, setExpanded] = useState(false);
+  const [educationExpanded, setEducationExpanded] = useState(false);
 
   return (
     <section id="about" style={{ padding: '60px' }}>
@@ -11,33 +12,51 @@ function About() {
         I am Waqas Ahmad, a Clinical AI researcher dedicated to building a future where technology serves the most vulnerable among us.
       </p>
 
-      <h3 style={{ marginTop: '30px', marginBottom: '20px', color: '#2563eb' }}>Education Background</h3>
-      <div style={{ marginBottom: '30px' }}>
-        <div style={{ marginBottom: '15px', padding: '15px', border: '1px solid #e5e7eb', borderRadius: '8px', backgroundColor: '#f9fafb' }}>
-          <h4 style={{ margin: '0 0 5px 0', color: '#1f2937' }}>Matriculation</h4>
-          <p style={{ margin: '0', fontSize: '14px', color: '#6b7280' }}>
-            Iqra School and College Daggar Buner Sowari<br />
-            Grade: A1 | Score: 1019/1100 (92.3%)<br />
-            Graduated: 2020
-          </p>
+      <button 
+        onClick={() => setEducationExpanded(!educationExpanded)}
+        style={{
+          background: '#10b981',
+          color: 'white',
+          border: 'none',
+          padding: '10px 20px',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          marginBottom: '20px'
+        }}
+      >
+        {educationExpanded ? 'Hide Education Background' : 'Show Education Background'}
+      </button>
+
+      {educationExpanded && (
+        <div style={{ marginBottom: '30px' }}>
+          <div style={{ marginBottom: '15px', padding: '15px', border: '1px solid #e5e7eb', borderRadius: '8px', backgroundColor: '#f9fafb' }}>
+            <h4 style={{ margin: '0 0 5px 0', color: '#1f2937' }}>Matriculation</h4>
+            <p style={{ margin: '0', fontSize: '14px', color: '#6b7280' }}>
+              Iqra School and College Daggar Buner Sowari<br />
+              Grade: A1 | Score: 1019/1100 (92.3%)<br />
+              Graduated: 2020
+            </p>
+          </div>
+          <div style={{ marginBottom: '15px', padding: '15px', border: '1px solid #e5e7eb', borderRadius: '8px', backgroundColor: '#f9fafb' }}>
+            <h4 style={{ margin: '0 0 5px 0', color: '#1f2937' }}>Pre Medical</h4>
+            <p style={{ margin: '0', fontSize: '14px', color: '#6b7280' }}>
+              Government Degree College Daggar Buner Sowari<br />
+              Grade: A1 | Percentage: 86.5%<br />
+              Graduated: 2022
+            </p>
+          </div>
+          <div style={{ padding: '15px', border: '1px solid #e5e7eb', borderRadius: '8px', backgroundColor: '#f9fafb' }}>
+            <h4 style={{ margin: '0 0 5px 0', color: '#1f2937' }}>Bachelor of Science in Computer Science</h4>
+            <p style={{ margin: '0', fontSize: '14px', color: '#6b7280' }}>
+              Abdul Wali Khan University Mardan, Garden Campus, KPK, Pakistan<br />
+              Department of Computer Science<br />
+              Final Year Student | October 2022 - June 2026
+            </p>
+          </div>
         </div>
-        <div style={{ marginBottom: '15px', padding: '15px', border: '1px solid #e5e7eb', borderRadius: '8px', backgroundColor: '#f9fafb' }}>
-          <h4 style={{ margin: '0 0 5px 0', color: '#1f2937' }}>Pre Medical</h4>
-          <p style={{ margin: '0', fontSize: '14px', color: '#6b7280' }}>
-            Government Degree College Daggar Buner Sowari<br />
-            Grade: A1 | Percentage: 86.5%<br />
-            Graduated: 2022
-          </p>
-        </div>
-        <div style={{ padding: '15px', border: '1px solid #e5e7eb', borderRadius: '8px', backgroundColor: '#f9fafb' }}>
-          <h4 style={{ margin: '0 0 5px 0', color: '#1f2937' }}>Bachelor of Science in Computer Science</h4>
-          <p style={{ margin: '0', fontSize: '14px', color: '#6b7280' }}>
-            Abdul Wali Khan University Mardan, Garden Campus, KPK, Pakistan<br />
-            Department of Computer Science<br />
-            Final Year Student | October 2022 - June 2026
-          </p>
-        </div>
-      </div>
+      )}
       
       <button 
         onClick={() => setExpanded(!expanded)}
