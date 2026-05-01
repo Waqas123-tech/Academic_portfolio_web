@@ -7,6 +7,7 @@ import Research from './components/Research';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Publications from './components/Publications';
+import BlogSection from './components/BlogSection';
 import Supervisor from './components/Supervisor';
 import Contact from './components/Contact';
 
@@ -21,6 +22,7 @@ function App() {
       <Skills />
       <Projects />
       <Publications />
+      <BlogSection />
       <Supervisor />
       <Contact />
     </div>
