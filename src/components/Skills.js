@@ -1,33 +1,33 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaPython, FaGitAlt, FaCode } from 'react-icons/fa';
-import { SiTailwindcss, SiDocker, SiMongodb, SiRedux, SiPostgresql } from 'react-icons/si';
+import { FaPython, FaBrain, FaDatabase, FaChartLine, FaTools, FaCode } from 'react-icons/fa';
+import { SiPytorch, SiNumpy, SiPandas, SiLatex, SiGit, SiTensorflow } from 'react-icons/si';
 
 const skillsData = [
   {
-    category: 'Frontend',
+    category: 'Core AI & Deep Learning',
     items: [
-      { name: 'React', icon: FaReact, level: 90, label: 'React / JSX / Hooks' },
-      { name: 'HTML', icon: FaHtml5, level: 95, label: 'Semantic HTML and accessibility' },
-      { name: 'CSS', icon: FaCss3Alt, level: 88, label: 'Modern layout, responsive design' },
-      { name: 'Tailwind CSS', icon: SiTailwindcss, level: 83, label: 'Utility-first styling and responsive UI' }
+      { name: 'Python & PyTorch', icon: FaPython, level: 95, label: 'Advanced architecture design, custom loss functions, and complex training loops for neuro-imaging data.' },
+      { name: 'Few-Shot Meta-Learning (MAML)', icon: SiPytorch, level: 90, label: 'Specialized implementation of model-agnostic meta-learning for data-scarce pediatric environments.' },
+      { name: 'Multimodal Fusion', icon: FaBrain, level: 88, label: 'Integrating EEG, fMRI, and clinical metadata using Cross-Modal Attention mechanisms.' },
+      { name: 'Explainable AI (XAI)', icon: SiTensorflow, level: 85, label: 'Deploying Grad-CAM, Saliency Maps, and attention visualization for clinical interpretability.' }
     ]
   },
   {
-    category: 'Backend',
+    category: 'Data Science & Clinical Analytics',
     items: [
-      { name: 'Node.js', icon: FaNodeJs, level: 85, label: 'API design, Express, REST' },
-      { name: 'Python', icon: FaPython, level: 92, label: 'Scripting, data processing, ML support' },
-      { name: 'MongoDB', icon: SiMongodb, level: 78, label: 'Document database modeling and queries' },
-      { name: 'PostgreSQL', icon: SiPostgresql, level: 76, label: 'Relational schema design and SQL' }
+      { name: 'Neuro-Signal Processing', icon: FaChartLine, level: 92, label: 'Preprocessing and feature extraction from raw EEG/fMRI time-series data.' },
+      { name: 'Algorithmic Fairness Auditing', icon: SiNumpy, level: 88, label: 'Statistical bias detection and mitigation across demographic groups (Gender, Race, Age).' },
+      { name: 'Statistical Analysis', icon: SiPandas, level: 90, label: 'Rigorous evaluation using Pandas, NumPy, SciPy, and structured CSV documentation.' },
+      { name: 'Systematic Review Methodology', icon: FaDatabase, level: 95, label: 'PRISMA guidelines, QUADAS-2 quality assessment, and meta-analysis synthesis.' }
     ]
   },
   {
-    category: 'Tools & DevOps',
+    category: 'Research Tools & Workflow',
     items: [
-      { name: 'Git', icon: FaGitAlt, level: 92, label: 'Version control and collaboration' },
-      { name: 'Docker', icon: SiDocker, level: 74, label: 'Containerization for reproducible apps' },
-      { name: 'Developer Tools', icon: FaCode, level: 94, label: 'IDE workflows, debugging, and extensions' },
-      { name: 'Redux', icon: SiRedux, level: 80, label: 'State management for frontend apps' }
+      { name: 'LaTeX & Scientific Writing', icon: SiLatex, level: 94, label: 'Professional typesetting and manuscript preparation for top-tier Q1 journals.' },
+      { name: 'Git & Version Control', icon: SiGit, level: 92, label: 'Managing complex codebases, experiment tracking, and collaborative research workflows.' },
+      { name: 'High-Performance Computing (HPC)', icon: FaTools, level: 85, label: 'Optimizing GPU utilization for large-scale deep learning training jobs.' },
+      { name: 'Clinical Framework Design', icon: FaCode, level: 90, label: 'Architecting novel paradigms like CLINIC-DL and DLQA for real-world deployment.' }
     ]
   }
 ];
@@ -62,9 +62,9 @@ function SkillsSection() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">Skills</p>
-          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Technical Skills</h2>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">My Technical Expertise</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600">
-            A modern skillset built for fast, responsive products and reliable backend systems.
+            Specialized skills in AI, data science, and research tools for clinical neuroscience applications.
           </p>
         </div>
 
