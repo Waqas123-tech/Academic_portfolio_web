@@ -32,6 +32,11 @@ const Supervisor = () => {
 
         <div style={{ width: '100%', maxWidth: '680px', padding: '30px', border: '1px solid #e5e7eb', borderRadius: '14px', background: '#f8fafc', boxShadow: '0 18px 40px rgba(15, 23, 42, 0.04)' }}>
           <h3>Supervisor</h3>
+          <img
+            src={`${process.env.PUBLIC_URL}/ashraf.jpg`}
+            alt="Ashraf Zia"
+            style={{ width: '150px', borderRadius: '50%', marginTop: '20px' }}
+          />
           <h4 style={{ marginTop: '15px' }}>Ashraf Zia</h4>
           <p style={{ maxWidth: '700px', margin: '20px auto 0', lineHeight: '1.8', textAlign: 'left' }}>
             Ashraf Zia received the Ph.D. degree in Computer Science, specifically in Computer Vision, Artificial Intelligence and Humanoid Robots from Aberystwyth University, Wales, U.K., and the M.S. degree in Software Engineering from SZABIST-Islamabad, Pakistan. Previously, he was a researcher at the Intelligent Robotics Lab for estimation of grasping patterns from images for humanoid robots using deep learning at Aberystwyth University, Wales, U.K. He is engaged in research on machine learning, deep learning, software engineering, and humanoid robots.
