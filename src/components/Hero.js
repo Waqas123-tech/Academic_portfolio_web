@@ -4,6 +4,19 @@ import { ReactTyped } from 'react-typed';
 function Hero() {
   return (
     <section style={{ textAlign: 'center' }}>
+      <img
+        src={`${process.env.PUBLIC_URL}/profile_waqas1.png`}
+        alt="Waqas Ahmad"
+        style={{
+          width: '180px',
+          height: '180px',
+          borderRadius: '50%',
+          objectFit: 'cover',
+          marginBottom: '25px',
+          border: '4px solid #2563eb'
+        }}
+      />
+
       <h1 style={{ fontSize: '48px' }}>Waqas Ahmad</h1>
 
       <h2 style={{ color: '#2563eb' }}>
