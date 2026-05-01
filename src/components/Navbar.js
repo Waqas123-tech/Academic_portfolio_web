@@ -16,7 +16,8 @@ function Navbar() {
       <div>
         <a href="#about">About</a> | 
         <a href="#research"> Research</a> | 
-        <a href="#projects"> Projects</a>
+        <a href="#projects"> Projects</a> | 
+        <a href="#blog"> Blogs</a>
       </div>
     </div>
   );
