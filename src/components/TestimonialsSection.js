@@ -8,7 +8,7 @@ const testimonials = [
     role: "Collaborating Researcher",
     organization: "Project Lead",
     quote: "Waqas Ahmad's work on Few-Shot Meta-Learning for pediatric seizure prediction is groundbreaking. Their ability to bridge complex deep learning with clinical needs is unmatched.",
-    avatar: "/dr-fangli-ying.jpg"
+    avatar: "/Dr Fangli.jpg"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const testimonials = [
     role: "Academic Co-Supervisor",
     organization: "Abdul Wali Khan University",
     quote: "A researcher of rare dedication. Waqas Ahmad's CLINIC-DL framework has redefined how we approach validity in AI-driven healthcare.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    avatar: "/hashim profile pic.png"
   },
   {
     id: 3,
@@ -24,16 +24,43 @@ const testimonials = [
     role: "Supervisor",
     organization: "Artificial Intelligence Review",
     quote: "The depth of insight in their systematic reviews on Fairness and XAI is exceptional. They don't just build models; they build trust.",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+    avatar: "/ashraf.jpg"
   }
 ];
 
 function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [avatarError, setAvatarError] = useState({});
   const intervalRef = useRef(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+
+  const renderAvatar = (testimonial) => {
+    const failed = avatarError[testimonial.id];
+    const initials = testimonial.name
+      .split(' ')
+      .map((part) => part[0])
+      .slice(0, 2)
+      .join('');
+
+    if (testimonial.avatar && !failed) {
+      return (
+        <img
+          src={testimonial.avatar}
+          alt={testimonial.name}
+          onError={() => setAvatarError((prev) => ({ ...prev, [testimonial.id]: true }))}
+          className="h-14 w-14 rounded-full object-cover"
+        />
+      );
+    }
+
+    return (
+      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-teal-600 text-base font-semibold text-white shadow-sm">
+        {initials}
+      </div>
+    );
+  };
 
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
@@ -103,11 +130,7 @@ function TestimonialsSection() {
             </blockquote>
 
             <div className="flex items-center gap-4">
-              <img
-                src={testimonials[currentIndex].avatar}
-                alt={testimonials[currentIndex].name}
-                className="h-12 w-12 rounded-full object-cover"
-              />
+              {renderAvatar(testimonials[currentIndex])}
               <div>
                 <p className="font-semibold text-slate-900 dark:text-slate-100">{testimonials[currentIndex].name}</p>
                 <p className="text-sm text-slate-600 dark:text-slate-400">{testimonials[currentIndex].role}</p>

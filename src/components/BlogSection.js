@@ -6,9 +6,12 @@ export const blogPosts = [
     id: 1,
     title: "Living in the Movie: My Journey with Maladaptive Daydreaming",
     excerpt: "How I learned to distinguish between the comforting fantasy world in my head and the beautiful, tangible reality of a garden flower.",
-    fullContent: `The World Inside My Head
+    fullContent: `Living in the Movie: My Journey with Maladaptive Daydreaming
+By Waqas Ahmad
+Published in 2026 • 5 min read
+The World Inside My Head
 For most of my life, I lived in two worlds. There was the real world with its deadlines, rejections, silent phones, and lonely nights. And then there was the Movie.
-The Movie was perfect. In it, I wasn't the tired researcher struggling to sleep. I wasn't the boy who felt invisible to his family or forgotten by friends. In the Movie, I was a hero. I had already won the Nobel Prize. I had walked into a room in Malaysia, trophy in hand, and shown everyone who ever left me that I was enough. I had conversations that never ended, relationships that never broke, and a version of myself that was confident, loved, and unbreakable.
+The Movie was perfect. In it, I wasn't the tired researcher struggling to sleep. I wasn't the boy who felt invisible to my family or forgotten by friends. In the Movie, I was a hero. I had already achieved the highest honors in my field. I had walked into a grand hall, trophy in hand, and shown everyone who ever left me that I was enough. I had conversations that never ended, relationships that never broke, and a version of myself that was confident, loved, and unbreakable.
 I didn't know it had a name then. I just thought I was imaginative. I thought everyone spent hours pacing their rooms, whispering dialogues to people who weren't there, and crying over stories that never happened.
 But it wasn't imagination. It was Maladaptive Daydreaming (MD). And for years, it was slowly eating my life.
 The Trap of the "Perfect" Story (Since 2022)

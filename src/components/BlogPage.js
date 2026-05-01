@@ -17,9 +17,9 @@ function BlogPage({ selectedBlogId = null, onNavigate = () => {} }) {
         <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-600 dark:text-teal-400">Blog</p>
-            <h1 className="mt-4 text-4xl font-semibold text-slate-900 dark:text-slate-100">Full Blog Archive</h1>
+            <h1 className="mt-4 text-4xl font-semibold text-slate-900 dark:text-slate-100">Dedicated Blog Page</h1>
             <p className="mt-3 max-w-2xl text-slate-600 dark:text-slate-400">
-              Explore research stories, clinical AI insights, and personal journeys on a dedicated page.
+              A clean, focused archive for your articles — no full posts on the home page.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

@@ -36,7 +36,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className="app bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
       <Navbar onNavigate={navigate} />
       {activePage === 'home' ? (
         <>
