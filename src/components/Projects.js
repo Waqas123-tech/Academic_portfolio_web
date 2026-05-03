@@ -52,75 +52,69 @@ function Projects() {
   const currentProjects = projects.filter(p => p.category === 'Current');
 
   return (
-    <div id="projects" style={{ padding: '60px' }}>
-      <h2>Projects & Research Portfolio</h2>
-
-      <h3 style={{ marginTop: '40px', marginBottom: '20px', color: '#2563eb' }}>Completed Work: The Foundations of Trust</h3>
-      {completedProjects.map((project) => (
-        <div key={project.id} style={{ marginBottom: '15px', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '15px', background: '#f9fafb' }}>
-          <button
-            onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
-            style={{
-              width: '100%',
-              background: 'transparent',
-              border: 'none',
-              textAlign: 'left',
-              cursor: 'pointer',
-              fontSize: '15px',
-              fontWeight: 'bold',
-              color: '#000',
-              padding: '0',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-start'
-            }}
-          >
-            <span>{project.id}. {project.title}</span>
-            <span style={{ fontSize: '20px', marginLeft: '10px' }}>{expandedId === project.id ? '−' : '+'}</span>
-          </button>
-          
-          {expandedId === project.id && (
-            <div style={{ marginTop: '15px', paddingTop: '15px', borderTop: '1px solid #e5e7eb', lineHeight: '1.7' }}>
-              <p style={{ margin: '0 0 10px 0', fontSize: '14px' }}><strong>Status:</strong> {project.status}</p>
-              <p style={{ margin: '0', fontSize: '15px', lineHeight: '1.6' }}>{project.description}</p>
-            </div>
-          )}
+    <section id="projects" className="px-6 py-24 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-6xl">
+        <div className="section-heading text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-600">Projects</p>
+          <h2 className="mt-4 font-semibold text-slate-950 dark:text-slate-100">Projects & Research Portfolio</h2>
+          <div className="section-underline"></div>
         </div>
-      ))}
 
-      <h3 style={{ marginTop: '40px', marginBottom: '20px', color: '#2563eb' }}>Current Work: The Future of Pediatric Neuro-AI</h3>
-      {currentProjects.map((project) => (
-        <div key={project.id} style={{ marginBottom: '15px', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '15px', background: '#f9fafb' }}>
-          <button
-            onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
-            style={{
-              width: '100%',
-              background: 'transparent',
-              border: 'none',
-              textAlign: 'left',
-              cursor: 'pointer',
-              fontSize: '15px',
-              fontWeight: 'bold',
-              color: '#000',
-              padding: '0',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-start'
-            }}
-          >
-            <span>{project.id}. {project.title}</span>
-            <span style={{ fontSize: '20px', marginLeft: '10px' }}>{expandedId === project.id ? '−' : '+'}</span>
-          </button>
-          
-          {expandedId === project.id && (
-            <div style={{ marginTop: '15px', paddingTop: '15px', borderTop: '1px solid #e5e7eb', lineHeight: '1.7' }}>
-              <p style={{ margin: '0 0 10px 0', fontSize: '14px' }}><strong>Status:</strong> {project.status}</p>
-              <p style={{ margin: '0', fontSize: '15px', lineHeight: '1.6' }}>{project.description}</p>
+        <div className="space-y-14">
+          <div>
+            <div className="mb-6 text-center">
+              <h3 className="text-2xl font-semibold text-teal-600">Completed Work</h3>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">Foundations of trust and clinical readiness.</p>
             </div>
-          )}
+            <div className="space-y-5">
+              {completedProjects.map((project) => (
+                <div key={project.id} className="rounded-[30px] border border-slate-200 bg-white/90 p-6 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-700 dark:bg-slate-950/70">
+                  <button
+                    onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
+                    className="flex w-full items-start justify-between gap-4 text-left"
+                  >
+                    <span className="text-lg font-semibold text-slate-900 dark:text-slate-100">{project.id}. {project.title}</span>
+                    <span className="text-2xl font-bold text-slate-400">{expandedId === project.id ? '−' : '+'}</span>
+                  </button>
+                  {expandedId === project.id && (
+                    <div className="mt-5 border-t border-slate-200 pt-5 text-slate-700 dark:border-slate-700 dark:text-slate-300">
+                      <p className="font-medium">Status: {project.status}</p>
+                      <p className="mt-3 leading-7">{project.description}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="mb-6 text-center">
+              <h3 className="text-2xl font-semibold text-teal-600">Current Work</h3>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">Building the next generation of pediatric neuro-AI.</p>
+            </div>
+            <div className="space-y-5">
+              {currentProjects.map((project) => (
+                <div key={project.id} className="rounded-[30px] border border-slate-200 bg-white/90 p-6 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-700 dark:bg-slate-950/70">
+                  <button
+                    onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
+                    className="flex w-full items-start justify-between gap-4 text-left"
+                  >
+                    <span className="text-lg font-semibold text-slate-900 dark:text-slate-100">{project.id}. {project.title}</span>
+                    <span className="text-2xl font-bold text-slate-400">{expandedId === project.id ? '−' : '+'}</span>
+                  </button>
+                  {expandedId === project.id && (
+                    <div className="mt-5 border-t border-slate-200 pt-5 text-slate-700 dark:border-slate-700 dark:text-slate-300">
+                      <p className="font-medium">Status: {project.status}</p>
+                      <p className="mt-3 leading-7">{project.description}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      ))}
-    </div>
+      </div>
+    </section>
   );
 }
 

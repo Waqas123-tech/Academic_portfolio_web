@@ -37,51 +37,47 @@ function Research() {
   ];
 
   return (
-    <div id="research" style={{ padding: '60px' }}>
-      <h2>My Research Focus: Where Code Meets Compassion</h2>
-      <p style={{ marginBottom: '30px', fontSize: '16px', lineHeight: '1.6' }}>
-        My research is driven by a single question: How do we build AI that doesn't just calculate accurately, but understands fairly? I specialize in transforming complex, opaque algorithms into transparent, clinically actionable tools for neurodevelopmental disorders. Here is how I approach the future of Clinical AI:
-      </p>
-
-      {researchAreas.map((area) => (
-        <div key={area.id} style={{ marginBottom: '20px', border: '1px solid #e5e7eb', borderRadius: '8px', padding: '15px' }}>
-          <button
-            onClick={() => setExpandedId(expandedId === area.id ? null : area.id)}
-            style={{
-              width: '100%',
-              background: 'transparent',
-              border: 'none',
-              textAlign: 'left',
-              cursor: 'pointer',
-              fontSize: '16px',
-              fontWeight: 'bold',
-              color: '#2563eb',
-              padding: '0',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center'
-            }}
-          >
-            <span>{area.id}. {area.title}</span>
-            <span style={{ fontSize: '20px' }}>{expandedId === area.id ? '−' : '+'}</span>
-          </button>
-          
-          {expandedId === area.id && (
-            <div style={{ marginTop: '15px', paddingTop: '15px', borderTop: '1px solid #e5e7eb', lineHeight: '1.7', fontSize: '15px' }}>
-              <p style={{ marginBottom: '10px' }}><strong>{area.challenge}</strong></p>
-              <p>{area.approach}</p>
-            </div>
-          )}
+    <section id="research" className="px-6 py-24 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-6xl">
+        <div className="section-heading text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-600">Research</p>
+          <h2 className="mt-4 font-semibold text-slate-950 dark:text-slate-100">My research focus: where code meets compassion</h2>
+          <div className="section-underline"></div>
         </div>
-      ))}
 
-      <div style={{ marginTop: '30px', padding: '20px', background: '#f0f4ff', borderRadius: '8px', lineHeight: '1.7' }}>
-        <h3 style={{ marginTop: '0' }}>Why This Matters</h3>
-        <p>
-          I do not research in a vacuum. Having lived with Maladaptive Daydreaming, I understand the fragility of the human mind and the danger of systems that don't account for individual differences. My work is a commitment to building technology that sees the whole person, not just the data point. I am building the tools I wished existed—fair, clear, and ready for the real world.
-        </p>
+        <div className="rounded-[32px] border border-slate-200 bg-white/90 p-8 shadow-xl dark:border-slate-700 dark:bg-slate-950/70">
+          <p className="text-slate-700 dark:text-slate-300 leading-8">
+            My research is driven by a single question: How do we build AI that doesn't just calculate accurately, but understands fairly? I specialize in transforming complex, opaque algorithms into transparent, clinically actionable tools for neurodevelopmental disorders.
+          </p>
+          <div className="mt-8 space-y-5">
+            {researchAreas.map((area) => (
+              <div key={area.id} className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+                <button
+                  onClick={() => setExpandedId(expandedId === area.id ? null : area.id)}
+                  className="flex w-full items-center justify-between gap-4 text-left"
+                >
+                  <span className="text-lg font-semibold text-slate-900 dark:text-slate-100">{area.id}. {area.title}</span>
+                  <span className="text-2xl font-bold text-slate-400">{expandedId === area.id ? '−' : '+'}</span>
+                </button>
+                {expandedId === area.id && (
+                  <div className="mt-5 border-t border-slate-200 pt-5 text-slate-700 dark:border-slate-700 dark:text-slate-300">
+                    <p className="font-semibold">{area.challenge}</p>
+                    <p className="mt-3 leading-7">{area.approach}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 rounded-[28px] bg-slate-50 p-6 text-slate-700 dark:bg-slate-900 dark:text-slate-300">
+            <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Why this matters</h3>
+            <p className="mt-4 leading-7">
+              I do not research in a vacuum. Having lived with Maladaptive Daydreaming, I understand the fragility of the human mind and the danger of systems that don't account for individual differences. My work is a commitment to building technology that sees the whole person, not just the data point.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

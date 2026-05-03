@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,6 +16,21 @@ import Contact from './components/Contact';
 function App() {
   const [activePage, setActivePage] = useState('home');
   const [selectedBlogId, setSelectedBlogId] = useState(null);
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    const preferredTheme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    setTheme(preferredTheme);
+    document.documentElement.classList.toggle('dark', preferredTheme === 'dark');
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    localStorage.setItem('theme', nextTheme);
+    document.documentElement.classList.toggle('dark', nextTheme === 'dark');
+  };
 
   const navigate = (target, blogId = null) => {
     if (target === 'blogs') {
@@ -36,8 +51,8 @@ function App() {
   };
 
   return (
-    <div className="app bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-      <Navbar onNavigate={navigate} />
+    <div className="app min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+      <Navbar theme={theme} onToggleTheme={toggleTheme} onNavigate={navigate} />
       {activePage === 'home' ? (
         <>
           <Hero />
