@@ -8,6 +8,9 @@ function Hero() {
       <div className="hero-glow two" />
       <div className="mx-auto max-w-6xl">
         <div className="glass-panel relative overflow-hidden rounded-[40px] border border-white/70 p-8 shadow-2xl shadow-slate-900/10 dark:border-slate-700/50 dark:bg-slate-950/70">
+          <div className="mb-6 rounded-[32px] border border-teal-400/20 bg-gradient-to-r from-teal-500/10 via-slate-50/80 to-teal-500/10 p-5 text-center text-sm font-semibold uppercase tracking-[0.24em] text-slate-950 shadow-slate-900/5 dark:from-slate-900/50 dark:via-slate-950/60 dark:to-teal-400/10 dark:text-teal-200">
+            Waqas Ahmad — Young Reviewer at Journal of Frontier in Public Digital Health (Q1, Impact Factor 3.4), championing AI-powered breakthroughs in ASD, Seizure and Stroke Care.
+          </div>
           <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="space-y-8 text-center lg:text-left">
               <div className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-100/95 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-teal-700 dark:bg-teal-900/20 dark:text-teal-200">
