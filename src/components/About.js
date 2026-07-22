@@ -15,13 +15,29 @@ function About() {
 
         <div className="grid gap-8 lg:grid-cols-[1.7fr_1fr]">
           <div className="glass-panel rounded-[32px] border border-slate-200 bg-white/85 p-8 shadow-xl dark:border-slate-700/70 dark:bg-slate-950/70">
-            <p className="text-slate-700 dark:text-slate-300 leading-8">
+            <div className="inline-flex items-center rounded-full border border-teal-500/30 bg-teal-50 px-3 py-2 text-sm font-semibold text-teal-700 dark:border-teal-400/20 dark:bg-teal-900/20 dark:text-teal-300">
+              HEC Global Scholars Network Approved Standard Fellow
+            </div>
+            <p className="mt-6 text-slate-700 leading-8 dark:text-slate-300">
               I am Waqas Ahmad, a Clinical AI researcher dedicated to building a future where technology serves the most vulnerable among us.
             </p>
 
-            <p className="mt-6 text-slate-700 dark:text-slate-300 leading-8">
+            <p className="mt-6 text-slate-700 leading-8 dark:text-slate-300">
               My work sits at the intersection of Multimodal Fusion, Algorithmic Fairness, and Explainable Deep Learning. I create trusted systems that are transparent, equitable, and ready for clinical adoption.
             </p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-900">
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-600">Recognition</p>
+                <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">Approved Standard Fellow in the HEC Global Scholars Network.</p>
+              </div>
+              <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-900">
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-600">Profile</p>
+                <a href="https://gsn.hec.gov.pk/profile/01kwfcfq98d9pv8a8cs5escg3y" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex text-sm font-semibold text-teal-600 transition hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                  View official HEC profile
+                </a>
+              </div>
+            </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <button
@@ -56,7 +72,7 @@ function About() {
           <div className="space-y-6">
             <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Education Highlights</h3>
-              <p className="mt-4 text-slate-600 dark:text-slate-400 leading-7">
+              <p className="mt-4 text-slate-600 leading-7 dark:text-slate-400">
                 A strong foundation in science and computing, built for real-world clinical research.
               </p>
               <div className="mt-6 space-y-4">

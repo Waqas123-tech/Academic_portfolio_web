@@ -8,10 +8,19 @@ function Hero() {
       <div className="hero-glow two" />
       <div className="mx-auto max-w-6xl">
         <div className="glass-panel relative overflow-hidden rounded-[40px] border border-white/70 p-8 shadow-2xl shadow-slate-900/10 dark:border-slate-700/50 dark:bg-slate-950/70">
-          <div className="mb-6 rounded-[32px] border border-teal-400/20 bg-gradient-to-r from-teal-500/10 via-slate-50/80 to-teal-500/10 p-5 text-center text-sm font-semibold uppercase tracking-[0.24em] text-slate-950 shadow-slate-900/5 dark:from-slate-900/50 dark:via-slate-950/60 dark:to-teal-400/10 dark:text-teal-200">
-            Waqas Ahmad — Young Reviewer at Journal of Frontier in Public Digital Health (Q1, Impact Factor 3.4), championing AI-powered breakthroughs in ASD, Seizure and Stroke Care.
+          <div className="mb-6 flex flex-wrap items-center justify-center gap-3 rounded-[30px] border border-teal-400/20 bg-gradient-to-r from-teal-500/10 via-slate-50/80 to-teal-500/10 p-4 text-center text-sm font-semibold uppercase tracking-[0.24em] text-slate-950 shadow-slate-900/5 dark:from-slate-900/50 dark:via-slate-950/60 dark:to-teal-400/10 dark:text-teal-200">
+            <span>Waqas Ahmad — Young Reviewer at Journal of Frontier in Public Digital Health</span>
+            <a
+              href="https://gsn.hec.gov.pk/profile/01kwfcfq98d9pv8a8cs5escg3y"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-teal-500/30 bg-white/80 px-3 py-1 text-[11px] text-teal-700 transition hover:bg-teal-50 dark:bg-slate-900/70 dark:text-teal-300"
+            >
+              HEC Approved Standard Fellow
+            </a>
           </div>
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+
+          <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div className="space-y-8 text-center lg:text-left">
               <div className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-100/95 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-teal-700 dark:bg-teal-900/20 dark:text-teal-200">
                 Elite Clinical AI Portfolio
@@ -40,18 +49,41 @@ function Hero() {
                 <a href="#contact" className="btn-fancy">
                   Contact Me
                 </a>
-                <a href="#projects" className="rounded-full border border-slate-300 bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-teal-500 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800">
-                  Explore Projects
+                <a href="https://gsn.hec.gov.pk/profile/01kwfcfq98d9pv8a8cs5escg3y" target="_blank" rel="noopener noreferrer" className="rounded-full border border-slate-300 bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-teal-500 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800">
+                  View HEC Profile
                 </a>
               </div>
+
+              <div className="grid gap-3 text-left sm:grid-cols-3">
+                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-700 dark:bg-slate-900/70">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-600">Focus</p>
+                  <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">Clinical AI & explainable deep learning</p>
+                </div>
+                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-700 dark:bg-slate-900/70">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-600">Impact</p>
+                  <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">ASD, seizure, and stroke care innovation</p>
+                </div>
+                <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-700 dark:bg-slate-900/70">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-600">Recognition</p>
+                  <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">HEC Global Scholars Network Fellow</p>
+                </div>
+              </div>
             </div>
+
             <div className="relative flex items-center justify-center">
-              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-900/5 via-transparent to-transparent" />
-              <img
-                src={`${process.env.PUBLIC_URL}/profile_waqas1.png`}
-                alt="Waqas Ahmad"
-                className="relative z-10 h-52 w-52 rounded-full object-cover border-4 border-teal-400/70 shadow-2xl shadow-teal-400/10"
-              />
+              <div className="relative w-full max-w-[320px] rounded-[32px] border border-slate-200 bg-white/80 p-4 shadow-xl dark:border-slate-700 dark:bg-slate-950/80">
+                <div className="absolute inset-x-8 top-0 h-20 rounded-b-full bg-gradient-to-r from-teal-400/20 to-sky-400/10 blur-3xl" />
+                <img
+                  src={`${process.env.PUBLIC_URL}/profile_waqas1.png`}
+                  alt="Waqas Ahmad"
+                  className="relative z-10 h-56 w-full rounded-[24px] border border-teal-400/40 object-cover shadow-lg"
+                />
+                <div className="mt-4 rounded-[24px] border border-slate-200 bg-slate-50/90 p-4 text-left dark:border-slate-700 dark:bg-slate-900/70">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-600">Current Focus</p>
+                  <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">Trusted AI for neurodevelopmental diagnostics</p>
+                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Research that keeps transparency, fairness, and clinical usability at the center.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

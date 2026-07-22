@@ -10,11 +10,11 @@ const Contact = () => {
           <div className="section-underline"></div>
         </div>
 
-        <div className="glass-panel rounded-[40px] border border-white/60 p-10 shadow-2xl shadow-slate-900/10 dark:border-slate-700/60 dark:bg-slate-950/75">
+        <div className="glass-panel rounded-[40px] border border-white/60 p-8 shadow-2xl shadow-slate-900/10 dark:border-slate-700/60 dark:bg-slate-950/75 sm:p-10">
           <p className="text-lg font-semibold text-slate-900 dark:text-white">
             I'm always open to new collaborations, research partnerships, and high-impact AI healthcare initiatives.
           </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-900">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-teal-600">Email</p>
               <p className="mt-4 text-base text-slate-700 dark:text-slate-300">
@@ -27,7 +27,15 @@ const Contact = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-teal-600">LinkedIn</p>
               <p className="mt-4 text-base text-slate-700 dark:text-slate-300">
                 <a href="https://www.linkedin.com/in/waqas-ahmed-582729296" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
-                  www.linkedin.com/in/waqas-ahmed-582729296
+                  waqas-ahmed-582729296
+                </a>
+              </p>
+            </div>
+            <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-900">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-teal-600">HEC Profile</p>
+              <p className="mt-4 text-base text-slate-700 dark:text-slate-300">
+                <a href="https://gsn.hec.gov.pk/profile/01kwfcfq98d9pv8a8cs5escg3y" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                  View official profile
                 </a>
               </p>
             </div>
