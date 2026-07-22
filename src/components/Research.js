@@ -46,9 +46,15 @@ function Research() {
         </div>
 
         <div className="rounded-[32px] border border-slate-200 bg-white/90 p-8 shadow-xl dark:border-slate-700 dark:bg-slate-950/70">
-          <p className="text-slate-700 dark:text-slate-300 leading-8">
-            My research is driven by a single question: How do we build AI that doesn't just calculate accurately, but understands fairly? I specialize in transforming complex, opaque algorithms into transparent, clinically actionable tools for neurodevelopmental disorders.
-          </p>
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+            <p className="text-slate-700 leading-8 dark:text-slate-300">
+              My research is driven by a single question: How do we build AI that doesn't just calculate accurately, but understands fairly? I specialize in transforming complex, opaque algorithms into transparent, clinically actionable tools for neurodevelopmental disorders.
+            </p>
+            <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-900">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-teal-600">Research Philosophy</p>
+              <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">Clinical relevance, fairness, and explainability are treated as essential requirements—not optional features.</p>
+            </div>
+          </div>
           <div className="mt-8 space-y-5">
             {researchAreas.map((area) => (
               <div key={area.id} className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">

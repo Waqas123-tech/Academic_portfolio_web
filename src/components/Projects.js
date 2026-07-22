@@ -64,7 +64,7 @@ function Projects() {
           <div>
             <div className="mb-6 text-center">
               <h3 className="text-2xl font-semibold text-teal-600">Completed Work</h3>
-              <p className="mt-2 text-slate-600 dark:text-slate-400">Foundations of trust and clinical readiness.</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">Research that established strong foundations for clinically trustworthy AI.</p>
             </div>
             <div className="space-y-5">
               {completedProjects.map((project) => (
@@ -90,7 +90,7 @@ function Projects() {
           <div>
             <div className="mb-6 text-center">
               <h3 className="text-2xl font-semibold text-teal-600">Current Work</h3>
-              <p className="mt-2 text-slate-600 dark:text-slate-400">Building the next generation of pediatric neuro-AI.</p>
+              <p className="mt-2 text-slate-600 dark:text-slate-400">Building the next generation of pediatric neuro-AI with real-world deployment in mind.</p>
             </div>
             <div className="space-y-5">
               {currentProjects.map((project) => (
